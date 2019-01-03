@@ -391,8 +391,8 @@ func TestPPC64EndToEnd(t *testing.T) {
 }
 
 func TestRISCVEncoder(t *testing.T) {
-	testEndToEnd(t, "riscv", "riscvenc")
-	testEndToEnd(t, "riscv", "riscvfarbranch")
+	testEndToEnd(t, "riscv64", "riscv64enc")
+	testEndToEnd(t, "riscv64", "riscv64farbranch")
 }
 
 func TestS390XEndToEnd(t *testing.T) {

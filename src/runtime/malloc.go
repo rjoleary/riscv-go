@@ -294,7 +294,7 @@ func mallocinit() {
 				p = uintptr(i)<<40 | uintptrMask&(0x0013<<28)
 			case GOARCH == "arm64":
 				p = uintptr(i)<<40 | uintptrMask&(0x0040<<32)
-			case GOARCH == "riscv":
+			case GOARCH == "riscv64":
 				p = uintptr(i)<<40 | uintptrMask&(0x0021<<32)
 			default:
 				p = uintptr(i)<<40 | uintptrMask&(0x00c0<<32)

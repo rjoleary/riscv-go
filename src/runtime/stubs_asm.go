@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build !mips64,!mips64le,!riscv
+// +build !mips64,!mips64le,!riscv64
 
 // Declarations for routines that are implemented in noasm.go.
 

@@ -270,7 +270,7 @@ func NewConfig(arch string, fe Frontend, ctxt *obj.Link, optimize bool) *Config 
 		c.LinkReg = linkRegMIPS
 		c.hasGReg = true
 		c.noDuffDevice = true
-	case "riscv":
+	case "riscv64":
 		c.IntSize = 8
 		c.PtrSize = 8
 		c.RegSize = 8

@@ -63,7 +63,7 @@ var okgoarch = []string{
 	"mips64le",
 	"ppc64",
 	"ppc64le",
-	"riscv",
+	"riscv64",
 	"s390x",
 }
 
@@ -1112,7 +1112,7 @@ var cgoEnabled = map[string]bool{
 	"linux/mipsle":    true,
 	"linux/mips64":    true,
 	"linux/mips64le":  true,
-	"linux/riscv":     false,
+	"linux/riscv64":   false,
 	"linux/s390x":     true,
 	"android/386":     true,
 	"android/amd64":   true,

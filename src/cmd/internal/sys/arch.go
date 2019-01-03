@@ -160,7 +160,7 @@ var ArchPPC64LE = &Arch{
 }
 
 var ArchRISCV = &Arch{
-	Name:      "riscv",
+	Name:      "riscv64",
 	Family:    RISCV,
 	ByteOrder: binary.LittleEndian,
 	IntSize:   8,

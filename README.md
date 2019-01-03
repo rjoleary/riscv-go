@@ -15,7 +15,7 @@ $ git clone https://review.gerrithub.io/riscv/riscv-go riscv-go
 $ cd riscv-go
 $ git checkout riscvdev  # RISC-V work happens on this branch
 $ export GOROOT_BOOTSTRAP=/path/to/prebuilt/go/tree
-$ export PATH="$(pwd)/misc/riscv:$(pwd)/bin:$PATH"
+$ export PATH="$(pwd)/misc/riscv64:$(pwd)/bin:$PATH"
 $ cd src
 $ ./make.bash
 ```
@@ -23,21 +23,21 @@ $ ./make.bash
 Compile and run in qemu-riscv64 (which is expected to be in PATH):
 
 ```sh
-$ GOARCH=riscv GOOS=linux go run ../riscvtest/add.go
+$ GOARCH=riscv64 GOOS=linux go run ../riscv64test/add.go
 ```
 
 Build:
 
 ```sh
-$ GOARCH=riscv GOOS=linux go build ../riscvtest/add.go
+$ GOARCH=riscv64 GOOS=linux go build ../riscv64test/add.go
 ```
 
 Test:
 
-Our basic tests are in the `riscvtest` directory:
+Our basic tests are in the `riscv64test` directory:
 
 ```sh
-$ cd ../riscvtest
+$ cd ../riscv64test
 $ go run run.go
 ```
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build arm64 riscv
+// +build arm64 riscv64
 
 package unix
 
@@ -11,6 +11,6 @@ package unix
 //
 // This file is named "generic" because at a certain point Linux
 // started standardizing on system call numbers across
-// architectures. So far this means only arm64 and riscv use the standard
+// architectures. So far this means only arm64 and riscv64 use the standard
 // numbers.
 const randomTrap uintptr = 278

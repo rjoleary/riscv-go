@@ -13,7 +13,7 @@ import (
 	"cmd/link/internal/mips"
 	"cmd/link/internal/mips64"
 	"cmd/link/internal/ppc64"
-	"cmd/link/internal/riscv"
+	"cmd/link/internal/riscv64"
 	"cmd/link/internal/s390x"
 	"cmd/link/internal/x86"
 	"fmt"
@@ -53,8 +53,8 @@ func main() {
 		mips64.Init()
 	case "ppc64", "ppc64le":
 		ppc64.Init()
-	case "riscv":
-		riscv.Main()
+	case "riscv64":
+		riscv64.Main()
 	case "s390x":
 		s390x.Init()
 	}

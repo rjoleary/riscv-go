@@ -80,7 +80,7 @@ var (
 	asmArchPpc64    = asmArch{"ppc64", size88, true, "R1", true}
 	asmArchPpc64LE  = asmArch{"ppc64le", size88, false, "R1", true}
 	asmArchS390X    = asmArch{"s390x", size88, true, "R15", true}
-	asmArchRISCV    = asmArch{"riscv", size88, false, "SP", true}
+	asmArchRISCV    = asmArch{"riscv64", size88, false, "SP", true}
 
 	arches = []*asmArch{
 		&asmArch386,

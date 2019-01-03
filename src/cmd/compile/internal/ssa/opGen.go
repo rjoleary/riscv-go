@@ -9,7 +9,7 @@ import (
 	"cmd/internal/obj/arm64"
 	"cmd/internal/obj/mips"
 	"cmd/internal/obj/ppc64"
-	"cmd/internal/obj/riscv"
+	"cmd/internal/obj/riscv64"
 	"cmd/internal/obj/s390x"
 	"cmd/internal/obj/x86"
 )
@@ -17039,7 +17039,7 @@ var opcodeTable = [...]opInfo{
 		name:        "ADD",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AADD,
+		asm:         riscv64.AADD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17054,7 +17054,7 @@ var opcodeTable = [...]opInfo{
 		name:    "ADDI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.AADDI,
+		asm:     riscv64.AADDI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17067,7 +17067,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SUB",
 		argLen: 2,
-		asm:    riscv.ASUB,
+		asm:    riscv64.ASUB,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17082,7 +17082,7 @@ var opcodeTable = [...]opInfo{
 		name:        "MUL",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AMUL,
+		asm:         riscv64.AMUL,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17097,7 +17097,7 @@ var opcodeTable = [...]opInfo{
 		name:        "MULW",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AMULW,
+		asm:         riscv64.AMULW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17112,7 +17112,7 @@ var opcodeTable = [...]opInfo{
 		name:        "MULH",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AMULH,
+		asm:         riscv64.AMULH,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17127,7 +17127,7 @@ var opcodeTable = [...]opInfo{
 		name:        "MULHU",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AMULHU,
+		asm:         riscv64.AMULHU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17141,7 +17141,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "DIV",
 		argLen: 2,
-		asm:    riscv.ADIV,
+		asm:    riscv64.ADIV,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17155,7 +17155,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "DIVU",
 		argLen: 2,
-		asm:    riscv.ADIVU,
+		asm:    riscv64.ADIVU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17169,7 +17169,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "DIVW",
 		argLen: 2,
-		asm:    riscv.ADIVW,
+		asm:    riscv64.ADIVW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17183,7 +17183,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "DIVUW",
 		argLen: 2,
-		asm:    riscv.ADIVUW,
+		asm:    riscv64.ADIVUW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17197,7 +17197,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "REM",
 		argLen: 2,
-		asm:    riscv.AREM,
+		asm:    riscv64.AREM,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17211,7 +17211,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "REMU",
 		argLen: 2,
-		asm:    riscv.AREMU,
+		asm:    riscv64.AREMU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17225,7 +17225,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "REMW",
 		argLen: 2,
-		asm:    riscv.AREMW,
+		asm:    riscv64.AREMW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17239,7 +17239,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "REMUW",
 		argLen: 2,
-		asm:    riscv.AREMUW,
+		asm:    riscv64.AREMUW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17255,7 +17255,7 @@ var opcodeTable = [...]opInfo{
 		auxType:           auxSymOff,
 		argLen:            1,
 		rematerializeable: true,
-		asm:               riscv.AMOV,
+		asm:               riscv64.AMOV,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17270,7 +17270,7 @@ var opcodeTable = [...]opInfo{
 		auxType:           auxInt8,
 		argLen:            0,
 		rematerializeable: true,
-		asm:               riscv.AMOV,
+		asm:               riscv64.AMOV,
 		reg: regInfo{
 			outputs: []outputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17282,7 +17282,7 @@ var opcodeTable = [...]opInfo{
 		auxType:           auxInt16,
 		argLen:            0,
 		rematerializeable: true,
-		asm:               riscv.AMOV,
+		asm:               riscv64.AMOV,
 		reg: regInfo{
 			outputs: []outputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17294,7 +17294,7 @@ var opcodeTable = [...]opInfo{
 		auxType:           auxInt32,
 		argLen:            0,
 		rematerializeable: true,
-		asm:               riscv.AMOV,
+		asm:               riscv64.AMOV,
 		reg: regInfo{
 			outputs: []outputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17306,7 +17306,7 @@ var opcodeTable = [...]opInfo{
 		auxType:           auxInt64,
 		argLen:            0,
 		rematerializeable: true,
-		asm:               riscv.AMOV,
+		asm:               riscv64.AMOV,
 		reg: regInfo{
 			outputs: []outputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17318,7 +17318,7 @@ var opcodeTable = [...]opInfo{
 		auxType:           auxInt32,
 		argLen:            0,
 		rematerializeable: true,
-		asm:               riscv.AMOV,
+		asm:               riscv64.AMOV,
 		reg: regInfo{
 			outputs: []outputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17330,7 +17330,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVB,
+		asm:            riscv64.AMOVB,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17345,7 +17345,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVH,
+		asm:            riscv64.AMOVH,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17360,7 +17360,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVW,
+		asm:            riscv64.AMOVW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17375,7 +17375,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOV,
+		asm:            riscv64.AMOV,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17390,7 +17390,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVBU,
+		asm:            riscv64.AMOVBU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17405,7 +17405,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVHU,
+		asm:            riscv64.AMOVHU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17420,7 +17420,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVWU,
+		asm:            riscv64.AMOVWU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -17435,7 +17435,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         3,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVB,
+		asm:            riscv64.AMOVB,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{1, 1073741814},          // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17448,7 +17448,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         3,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVH,
+		asm:            riscv64.AMOVH,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{1, 1073741814},          // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17461,7 +17461,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         3,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVW,
+		asm:            riscv64.AMOVW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{1, 1073741814},          // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17474,7 +17474,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         3,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOV,
+		asm:            riscv64.AMOV,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{1, 1073741814},          // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17485,7 +17485,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SLL",
 		argLen: 2,
-		asm:    riscv.ASLL,
+		asm:    riscv64.ASLL,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17499,7 +17499,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SRA",
 		argLen: 2,
-		asm:    riscv.ASRA,
+		asm:    riscv64.ASRA,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17513,7 +17513,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SRL",
 		argLen: 2,
-		asm:    riscv.ASRL,
+		asm:    riscv64.ASRL,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17528,7 +17528,7 @@ var opcodeTable = [...]opInfo{
 		name:    "SLLI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.ASLLI,
+		asm:     riscv64.ASLLI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17542,7 +17542,7 @@ var opcodeTable = [...]opInfo{
 		name:    "SRAI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.ASRAI,
+		asm:     riscv64.ASRAI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17556,7 +17556,7 @@ var opcodeTable = [...]opInfo{
 		name:    "SRLI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.ASRLI,
+		asm:     riscv64.ASRLI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17570,7 +17570,7 @@ var opcodeTable = [...]opInfo{
 		name:        "XOR",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AXOR,
+		asm:         riscv64.AXOR,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17585,7 +17585,7 @@ var opcodeTable = [...]opInfo{
 		name:    "XORI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.AXORI,
+		asm:     riscv64.AXORI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17599,7 +17599,7 @@ var opcodeTable = [...]opInfo{
 		name:        "OR",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AOR,
+		asm:         riscv64.AOR,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17614,7 +17614,7 @@ var opcodeTable = [...]opInfo{
 		name:    "ORI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.AORI,
+		asm:     riscv64.AORI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17628,7 +17628,7 @@ var opcodeTable = [...]opInfo{
 		name:        "AND",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AAND,
+		asm:         riscv64.AAND,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17643,7 +17643,7 @@ var opcodeTable = [...]opInfo{
 		name:    "ANDI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.AANDI,
+		asm:     riscv64.AANDI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17656,7 +17656,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SEQZ",
 		argLen: 1,
-		asm:    riscv.ASEQZ,
+		asm:    riscv64.ASEQZ,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17669,7 +17669,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SNEZ",
 		argLen: 1,
-		asm:    riscv.ASNEZ,
+		asm:    riscv64.ASNEZ,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17682,7 +17682,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SLT",
 		argLen: 2,
-		asm:    riscv.ASLT,
+		asm:    riscv64.ASLT,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17697,7 +17697,7 @@ var opcodeTable = [...]opInfo{
 		name:    "SLTI",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.ASLTI,
+		asm:     riscv64.ASLTI,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17710,7 +17710,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "SLTU",
 		argLen: 2,
-		asm:    riscv.ASLTU,
+		asm:    riscv64.ASLTU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17725,7 +17725,7 @@ var opcodeTable = [...]opInfo{
 		name:    "SLTIU",
 		auxType: auxInt64,
 		argLen:  1,
-		asm:     riscv.ASLTIU,
+		asm:     riscv64.ASLTIU,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17738,7 +17738,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "MOVconvert",
 		argLen: 2,
-		asm:    riscv.AMOV,
+		asm:    riscv64.AMOV,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17852,7 +17852,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FADDS",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFADDS,
+		asm:         riscv64.AFADDS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17866,7 +17866,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FSUBS",
 		argLen: 2,
-		asm:    riscv.AFSUBS,
+		asm:    riscv64.AFSUBS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17881,7 +17881,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FMULS",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFMULS,
+		asm:         riscv64.AFMULS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17895,7 +17895,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FDIVS",
 		argLen: 2,
-		asm:    riscv.AFDIVS,
+		asm:    riscv64.AFDIVS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17909,7 +17909,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FSQRTS",
 		argLen: 1,
-		asm:    riscv.AFSQRTS,
+		asm:    riscv64.AFSQRTS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17922,7 +17922,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FNEGS",
 		argLen: 1,
-		asm:    riscv.AFNEGS,
+		asm:    riscv64.AFNEGS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17935,7 +17935,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FMVSX",
 		argLen: 1,
-		asm:    riscv.AFMVSX,
+		asm:    riscv64.AFMVSX,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17948,7 +17948,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTSW",
 		argLen: 1,
-		asm:    riscv.AFCVTSW,
+		asm:    riscv64.AFCVTSW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17961,7 +17961,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTSL",
 		argLen: 1,
-		asm:    riscv.AFCVTSL,
+		asm:    riscv64.AFCVTSL,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -17974,7 +17974,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTWS",
 		argLen: 1,
-		asm:    riscv.AFCVTWS,
+		asm:    riscv64.AFCVTWS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -17987,7 +17987,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTLS",
 		argLen: 1,
-		asm:    riscv.AFCVTLS,
+		asm:    riscv64.AFCVTLS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18002,7 +18002,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVF,
+		asm:            riscv64.AMOVF,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -18017,7 +18017,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         3,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVF,
+		asm:            riscv64.AMOVF,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -18029,7 +18029,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FEQS",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFEQS,
+		asm:         riscv64.AFEQS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18044,7 +18044,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FNES",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFNES,
+		asm:         riscv64.AFNES,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18058,7 +18058,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FLTS",
 		argLen: 2,
-		asm:    riscv.AFLTS,
+		asm:    riscv64.AFLTS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18072,7 +18072,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FLES",
 		argLen: 2,
-		asm:    riscv.AFLES,
+		asm:    riscv64.AFLES,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18087,7 +18087,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FADDD",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFADDD,
+		asm:         riscv64.AFADDD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18101,7 +18101,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FSUBD",
 		argLen: 2,
-		asm:    riscv.AFSUBD,
+		asm:    riscv64.AFSUBD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18116,7 +18116,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FMULD",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFMULD,
+		asm:         riscv64.AFMULD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18130,7 +18130,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FDIVD",
 		argLen: 2,
-		asm:    riscv.AFDIVD,
+		asm:    riscv64.AFDIVD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18144,7 +18144,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FSQRTD",
 		argLen: 1,
-		asm:    riscv.AFSQRTD,
+		asm:    riscv64.AFSQRTD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18157,7 +18157,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FNEGD",
 		argLen: 1,
-		asm:    riscv.AFNEGD,
+		asm:    riscv64.AFNEGD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18170,7 +18170,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FMVDX",
 		argLen: 1,
-		asm:    riscv.AFMVDX,
+		asm:    riscv64.AFMVDX,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -18183,7 +18183,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTDW",
 		argLen: 1,
-		asm:    riscv.AFCVTDW,
+		asm:    riscv64.AFCVTDW,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -18196,7 +18196,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTDL",
 		argLen: 1,
-		asm:    riscv.AFCVTDL,
+		asm:    riscv64.AFCVTDL,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1073741812}, // GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5
@@ -18209,7 +18209,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTWD",
 		argLen: 1,
-		asm:    riscv.AFCVTWD,
+		asm:    riscv64.AFCVTWD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18222,7 +18222,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTLD",
 		argLen: 1,
-		asm:    riscv.AFCVTLD,
+		asm:    riscv64.AFCVTLD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18235,7 +18235,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTDS",
 		argLen: 1,
-		asm:    riscv.AFCVTDS,
+		asm:    riscv64.AFCVTDS,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18248,7 +18248,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FCVTSD",
 		argLen: 1,
-		asm:    riscv.AFCVTSD,
+		asm:    riscv64.AFCVTSD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18263,7 +18263,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         2,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVD,
+		asm:            riscv64.AMOVD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -18278,7 +18278,7 @@ var opcodeTable = [...]opInfo{
 		auxType:        auxSymOff,
 		argLen:         3,
 		faultOnNilArg0: true,
-		asm:            riscv.AMOVD,
+		asm:            riscv64.AMOVD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372037928517622}, // SP GP T0 T1 T2 S0 S1 A0 A1 A2 A3 A4 A5 A6 A7 S2 S3 CTXT S5 S6 S7 S8 S9 S10 S11 T3 T4 T5 SB
@@ -18290,7 +18290,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FEQD",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFEQD,
+		asm:         riscv64.AFEQD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18305,7 +18305,7 @@ var opcodeTable = [...]opInfo{
 		name:        "FNED",
 		argLen:      2,
 		commutative: true,
-		asm:         riscv.AFNED,
+		asm:         riscv64.AFNED,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18319,7 +18319,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FLTD",
 		argLen: 2,
-		asm:    riscv.AFLTD,
+		asm:    riscv64.AFLTD,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -18333,7 +18333,7 @@ var opcodeTable = [...]opInfo{
 	{
 		name:   "FLED",
 		argLen: 2,
-		asm:    riscv.AFLED,
+		asm:    riscv64.AFLED,
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 9223372034707292160}, // FT0 FT1 FT2 FT3 FT4 FT5 FT6 FT7 FS0 FS1 FA0 FA1 FA2 FA3 FA4 FA5 FA6 FA7 FS2 FS3 FS4 FS5 FS6 FS7 FS8 FS9 FS10 FS11 FT8 FT9 FT10 FT11
@@ -23246,69 +23246,69 @@ var specialRegMaskPPC64 = regMask(0)
 var framepointerRegPPC64 = int8(1)
 var linkRegPPC64 = int8(-1)
 var registersRISCV = [...]Register{
-	{0, riscv.REG_ZERO, "ZERO"},
-	{1, riscv.REGSP, "SP"},
-	{2, riscv.REG_GP, "GP"},
-	{3, riscv.REGG, "g"},
-	{4, riscv.REG_T0, "T0"},
-	{5, riscv.REG_T1, "T1"},
-	{6, riscv.REG_T2, "T2"},
-	{7, riscv.REG_S0, "S0"},
-	{8, riscv.REG_S1, "S1"},
-	{9, riscv.REG_A0, "A0"},
-	{10, riscv.REG_A1, "A1"},
-	{11, riscv.REG_A2, "A2"},
-	{12, riscv.REG_A3, "A3"},
-	{13, riscv.REG_A4, "A4"},
-	{14, riscv.REG_A5, "A5"},
-	{15, riscv.REG_A6, "A6"},
-	{16, riscv.REG_A7, "A7"},
-	{17, riscv.REG_S2, "S2"},
-	{18, riscv.REG_S3, "S3"},
-	{19, riscv.REG_CTXT, "CTXT"},
-	{20, riscv.REG_S5, "S5"},
-	{21, riscv.REG_S6, "S6"},
-	{22, riscv.REG_S7, "S7"},
-	{23, riscv.REG_S8, "S8"},
-	{24, riscv.REG_S9, "S9"},
-	{25, riscv.REG_S10, "S10"},
-	{26, riscv.REG_S11, "S11"},
-	{27, riscv.REG_T3, "T3"},
-	{28, riscv.REG_T4, "T4"},
-	{29, riscv.REG_T5, "T5"},
-	{30, riscv.REG_TMP, "TMP"},
-	{31, riscv.REG_FT0, "FT0"},
-	{32, riscv.REG_FT1, "FT1"},
-	{33, riscv.REG_FT2, "FT2"},
-	{34, riscv.REG_FT3, "FT3"},
-	{35, riscv.REG_FT4, "FT4"},
-	{36, riscv.REG_FT5, "FT5"},
-	{37, riscv.REG_FT6, "FT6"},
-	{38, riscv.REG_FT7, "FT7"},
-	{39, riscv.REG_FS0, "FS0"},
-	{40, riscv.REG_FS1, "FS1"},
-	{41, riscv.REG_FA0, "FA0"},
-	{42, riscv.REG_FA1, "FA1"},
-	{43, riscv.REG_FA2, "FA2"},
-	{44, riscv.REG_FA3, "FA3"},
-	{45, riscv.REG_FA4, "FA4"},
-	{46, riscv.REG_FA5, "FA5"},
-	{47, riscv.REG_FA6, "FA6"},
-	{48, riscv.REG_FA7, "FA7"},
-	{49, riscv.REG_FS2, "FS2"},
-	{50, riscv.REG_FS3, "FS3"},
-	{51, riscv.REG_FS4, "FS4"},
-	{52, riscv.REG_FS5, "FS5"},
-	{53, riscv.REG_FS6, "FS6"},
-	{54, riscv.REG_FS7, "FS7"},
-	{55, riscv.REG_FS8, "FS8"},
-	{56, riscv.REG_FS9, "FS9"},
-	{57, riscv.REG_FS10, "FS10"},
-	{58, riscv.REG_FS11, "FS11"},
-	{59, riscv.REG_FT8, "FT8"},
-	{60, riscv.REG_FT9, "FT9"},
-	{61, riscv.REG_FT10, "FT10"},
-	{62, riscv.REG_FT11, "FT11"},
+	{0, riscv64.REG_ZERO, "ZERO"},
+	{1, riscv64.REGSP, "SP"},
+	{2, riscv64.REG_GP, "GP"},
+	{3, riscv64.REGG, "g"},
+	{4, riscv64.REG_T0, "T0"},
+	{5, riscv64.REG_T1, "T1"},
+	{6, riscv64.REG_T2, "T2"},
+	{7, riscv64.REG_S0, "S0"},
+	{8, riscv64.REG_S1, "S1"},
+	{9, riscv64.REG_A0, "A0"},
+	{10, riscv64.REG_A1, "A1"},
+	{11, riscv64.REG_A2, "A2"},
+	{12, riscv64.REG_A3, "A3"},
+	{13, riscv64.REG_A4, "A4"},
+	{14, riscv64.REG_A5, "A5"},
+	{15, riscv64.REG_A6, "A6"},
+	{16, riscv64.REG_A7, "A7"},
+	{17, riscv64.REG_S2, "S2"},
+	{18, riscv64.REG_S3, "S3"},
+	{19, riscv64.REG_CTXT, "CTXT"},
+	{20, riscv64.REG_S5, "S5"},
+	{21, riscv64.REG_S6, "S6"},
+	{22, riscv64.REG_S7, "S7"},
+	{23, riscv64.REG_S8, "S8"},
+	{24, riscv64.REG_S9, "S9"},
+	{25, riscv64.REG_S10, "S10"},
+	{26, riscv64.REG_S11, "S11"},
+	{27, riscv64.REG_T3, "T3"},
+	{28, riscv64.REG_T4, "T4"},
+	{29, riscv64.REG_T5, "T5"},
+	{30, riscv64.REG_TMP, "TMP"},
+	{31, riscv64.REG_FT0, "FT0"},
+	{32, riscv64.REG_FT1, "FT1"},
+	{33, riscv64.REG_FT2, "FT2"},
+	{34, riscv64.REG_FT3, "FT3"},
+	{35, riscv64.REG_FT4, "FT4"},
+	{36, riscv64.REG_FT5, "FT5"},
+	{37, riscv64.REG_FT6, "FT6"},
+	{38, riscv64.REG_FT7, "FT7"},
+	{39, riscv64.REG_FS0, "FS0"},
+	{40, riscv64.REG_FS1, "FS1"},
+	{41, riscv64.REG_FA0, "FA0"},
+	{42, riscv64.REG_FA1, "FA1"},
+	{43, riscv64.REG_FA2, "FA2"},
+	{44, riscv64.REG_FA3, "FA3"},
+	{45, riscv64.REG_FA4, "FA4"},
+	{46, riscv64.REG_FA5, "FA5"},
+	{47, riscv64.REG_FA6, "FA6"},
+	{48, riscv64.REG_FA7, "FA7"},
+	{49, riscv64.REG_FS2, "FS2"},
+	{50, riscv64.REG_FS3, "FS3"},
+	{51, riscv64.REG_FS4, "FS4"},
+	{52, riscv64.REG_FS5, "FS5"},
+	{53, riscv64.REG_FS6, "FS6"},
+	{54, riscv64.REG_FS7, "FS7"},
+	{55, riscv64.REG_FS8, "FS8"},
+	{56, riscv64.REG_FS9, "FS9"},
+	{57, riscv64.REG_FS10, "FS10"},
+	{58, riscv64.REG_FS11, "FS11"},
+	{59, riscv64.REG_FT8, "FT8"},
+	{60, riscv64.REG_FT9, "FT9"},
+	{61, riscv64.REG_FT10, "FT10"},
+	{62, riscv64.REG_FT11, "FT11"},
 	{63, 0, "SB"},
 }
 var gpRegMaskRISCV = regMask(1073741812)

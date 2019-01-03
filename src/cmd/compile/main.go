@@ -12,7 +12,7 @@ import (
 	"cmd/compile/internal/mips"
 	"cmd/compile/internal/mips64"
 	"cmd/compile/internal/ppc64"
-	"cmd/compile/internal/riscv"
+	"cmd/compile/internal/riscv64"
 	"cmd/compile/internal/s390x"
 	"cmd/compile/internal/x86"
 	"cmd/internal/obj"
@@ -46,8 +46,8 @@ func main() {
 		ppc64.Init()
 	case "s390x":
 		s390x.Init()
-	case "riscv":
-		riscv.Main()
+	case "riscv64":
+		riscv64.Main()
 	}
 
 	gc.Main()

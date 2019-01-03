@@ -6,7 +6,7 @@
 
 package main
 
-import "cmd/internal/obj/riscv"
+import "cmd/internal/obj/riscv64"
 
 func init() {
 	var regNamesRISCV []string
@@ -16,11 +16,11 @@ func init() {
 	// Build the list of register names, creating an appropriately indexed
 	// regMask for the gp and fp registers as we go.
 	//
-	// If name is specified, use it rather than the riscv reg number.
+	// If name is specified, use it rather than the riscv64 reg number.
 	addreg := func(r int, name string) regMask {
 		mask := regMask(1) << uint(len(regNamesRISCV))
 		if name == "" {
-			name = riscv.RegNames[int16(r)]
+			name = riscv64.RegNames[int16(r)]
 		}
 		regNamesRISCV = append(regNamesRISCV, name)
 		regNamed[name] = mask
@@ -28,8 +28,8 @@ func init() {
 	}
 
 	// General purpose registers.
-	for r := riscv.REG_X0; r <= riscv.REG_X31; r++ {
-		if r == riscv.REG_RA {
+	for r := riscv64.REG_X0; r <= riscv64.REG_X31; r++ {
+		if r == riscv64.REG_RA {
 			// RA is not used by regalloc, so we skip it to leave
 			// room for pseudo-register SB.
 			continue
@@ -40,8 +40,8 @@ func init() {
 		// Add general purpose registers to gpMask.
 		switch r {
 		// ZERO, g, and TMP are not in any gp mask.
-		case riscv.REG_ZERO, riscv.REG_G, riscv.REG_TMP:
-		case riscv.REG_SP:
+		case riscv64.REG_ZERO, riscv64.REG_G, riscv64.REG_TMP:
+		case riscv64.REG_SP:
 			gpspMask |= mask
 			gpspsbMask |= mask
 		default:
@@ -52,7 +52,7 @@ func init() {
 	}
 
 	// Floating pointer registers.
-	for r := riscv.REG_F0; r <= riscv.REG_F31; r++ {
+	for r := riscv64.REG_F0; r <= riscv64.REG_F31; r++ {
 		mask := addreg(r, "")
 		fpMask |= mask
 	}
@@ -271,8 +271,8 @@ func init() {
 
 	archs = append(archs, arch{
 		name:            "RISCV",
-		pkg:             "cmd/internal/obj/riscv",
-		genfile:         "../../riscv/ssa.go",
+		pkg:             "cmd/internal/obj/riscv64",
+		genfile:         "../../riscv64/ssa.go",
 		ops:             RISCVops,
 		blocks:          RISCVblocks,
 		regnames:        regNamesRISCV,

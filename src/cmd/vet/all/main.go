@@ -319,7 +319,7 @@ var nbits = map[string]int{
 	"ppc64":    64,
 	"ppc64le":  64,
 	"s390x":    64,
-	"riscv":    64,
+	"riscv64":  64,
 }
 
 // archAsmX maps architectures to the suffix usually used for their assembly files,
